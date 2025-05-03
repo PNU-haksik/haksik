@@ -1,4 +1,8 @@
-# Welcome to your organization's demo respository
-This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+# 부산대학교 학식 구매 및 대기 서비스
+## 구현 기능
 
-The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+- 식권 구매 기능
+- 대기열 기능
+- 식단표 제공
+
+- 관리자 기능

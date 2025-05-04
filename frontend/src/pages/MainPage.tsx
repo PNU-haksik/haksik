@@ -1,7 +1,8 @@
 // filepath: c:\Private\git\haksik\frontend\src\pages\MainPage.tsx
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './MainPage.css'; // 메인 페이지 스타일
+// import './MainPage.css'; // 기존 경로 대신
+import '../components/MainPage.css'; // components 폴더를 가리키도록 수정
 
 // 임시 QR 코드 데이터 타입 (실제 구현 시 백엔드 응답에 맞게 수정)
 interface QrCodeData {

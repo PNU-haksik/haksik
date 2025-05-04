@@ -32,17 +32,41 @@
   }
   
   .qr-code-display {
-    /* TODO: 실제 QR 코드 라이브러리 스타일에 맞게 조정 */
     padding: 1rem;
     background-color: #fff;
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    word-break: break-all; /* QR 값이 길 경우 줄바꿈 */
+    word-break: break-all;
+    display: flex; /* 내부 요소 정렬 위해 추가 */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가운데 정렬 */
   }
   
   .qr-code-display p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
+  }
+  
+  .qr-image {
+    width: 150px; /* QR 이미지 크기 조절 */
+    height: 150px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border); /* 테두리 추가 */
+  }
+
+  .qr-details {
+    font-size: 0.8rem; /* QR 상세 정보 폰트 크기 */
+    color: var(--color-text-secondary);
+    word-break: break-all;
+    margin: 0.2rem 0;
+  }
+
+  /* 메뉴 이름 강조 스타일 */
+  .qr-menu-name {
+    font-size: 2.5rem; /* 폰트 크기 더 키움 (약 40px) */
+    font-weight: 600; /* 폰트 굵게 */
+    color: var(--color-primary); /* 색상 강조 (교색 사용) */
+    margin-top: 0.5rem; /* 위쪽 여백 추가 */
   }
   
   .no-qr-code {
@@ -101,6 +125,65 @@
   .logout-button:hover {
     background-color: #5a6268;
     border-color: #5a6268;
+  }
+  
+  /* 대기열 섹션 스타일 */
+  .queue-section {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    margin-bottom: 2rem; /* 네비게이션과의 간격 */
+  }
+
+  .queue-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--color-secondary); /* 대기열 제목은 보조색 사용 */
+  }
+
+  .queue-info p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: var(--color-text);
+  }
+
+  .queue-info strong {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+  }
+
+  .refresh-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: transparent; /* 배경 투명 */
+    color: var(--color-primary); /* 글자색 */
+    border: 1px solid var(--color-primary); /* 테두리 */
+  }
+
+  .refresh-button:hover {
+    background-color: rgba(0, 91, 170, 0.1); /* 호버 시 약간 배경색 */
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .refresh-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: var(--color-text-secondary);
+    color: var(--color-text-secondary);
+  }
+
+  /* 에러 메시지 스타일 (index.css에도 있지만, 여기서도 정의 가능) */
+  .queue-section .error-message {
+    color: var(--color-error);
+    margin-top: 1rem;
   }
   
   /* 데스크탑 화면에서는 가로 배치 (선택 사항) */

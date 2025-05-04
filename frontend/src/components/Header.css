@@ -1,0 +1,203 @@
+:root {
+  /* 색상 변수 */
+  --color-primary: #005baa;
+  --color-secondary: #00A651;
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa; /* 카드 배경 등에 사용 */
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-border: #dee2e6;
+  --color-error: #dc3545;
+
+  /* 폰트 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* 기본 색상 */
+  color: var(--color-text);
+  background-color: var(--color-background);
+  color-scheme: light;
+}
+
+/* 링크 */
+a {
+  color: var(--color-primary);
+  text-decoration: none; /* 밑줄 제거 */
+  transition: color 0.15s ease-in-out;
+}
+a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline; /* 호버 시 밑줄 */
+}
+
+/* 본문 레이아웃 */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Header가 상단에 오도록 */
+  min-height: 100vh;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 버튼 */
+button {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem; /* 패딩 조정 */
+  font-size: 1rem;
+  border-radius: 0.3rem; /* 약간 둥근 모서리 */
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+button:hover {
+  background-color: #004a8c; /* 약간 어둡게 */
+  border-color: #004a8c;
+}
+button:focus,
+button:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 91, 170, 0.5); /* 포커스 시 테두리 */
+}
+
+/* 입력 필드 기본 스타일 */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  background-clip: padding-box;
+  border: 1px solid var(--color-border);
+  appearance: none;
+  border-radius: 0.3rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+input:focus {
+  border-color: var(--color-primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 91, 170, 0.25);
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* 모바일 우선 대응 */
+@media (max-width: 576px) {
+  :root {
+    font-size: 15px; /* 모바일 가독성 위해 약간 키움 */
+  }
+  button, input {
+     font-size: 1rem; /* 모바일에서 입력 필드/버튼 폰트 크기 유지 */
+  }
+}
+
+/* filepath: c:\Private\git\haksik\frontend\src\components\Header.css */
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
+  background-color: #fff;                     /* 흰색 배경 */
+  border-bottom: 2px solid var(--color-primary); /* 하단에 교색 테두리 */
+}
+
+.app-header img {
+  height: 40px;
+  max-width: 100%;
+}
+
+/* filepath: c:\Private\git\haksik\frontend\src\pages\LoginPage.css */
+.login-page {
+  display: flex;
+  flex-direction: column; /* 컨텐츠가 세로로 쌓이도록 */
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* 남은 공간 채우기 */
+  padding: 1.5rem;
+  background-color: var(--color-background); /* 전역 배경색 사용 */
+}
+
+.login-card {
+  background-color: var(--color-surface); /* 밝은 표면색 */
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px; /* 최대 너비 조정 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 부드러운 그림자 */
+  border: 1px solid var(--color-border); /* 얇은 테두리 */
+  box-sizing: border-box;
+}
+
+.login-card h2 {
+  margin-top: 0; /* 상단 여백 제거 */
+  margin-bottom: 2rem; /* 제목 아래 여백 증가 */
+  text-align: center;
+  color: var(--color-primary); /* 제목에 교색 적용 */
+  font-weight: 600;
+}
+
+/* Form 내부 요소 스타일 */
+.login-card form > div {
+  margin-bottom: 1.25rem; /* 필드 간 간격 조정 */
+}
+
+.login-card form label {
+  display: block; /* 레이블을 블록 요소로 */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem; /* 레이블 폰트 크기 조정 */
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* 버튼 상단 여백 */
+.login-card form button[type="submit"] {
+  margin-top: 2rem; /* 버튼 위 여백 증가 */
+  width: 100%; /* 버튼 너비 100% */
+}
+
+/* 여기가 회원가입 링크가 있는 푸터 스타일입니다 */
+.login-footer {
+  margin-top: 1.5rem; /* 여백 조정 */
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.login-footer a {
+  font-weight: 500;
+  margin-left: 0.25rem;
+  color: var(--color-primary); /* 링크 색상 확인 */
+}
+.login-footer a:hover {
+  color: var(--color-secondary); /* 호버 색상 확인 */
+}

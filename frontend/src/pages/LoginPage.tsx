@@ -1,23 +1,33 @@
-// src/pages/LoginPage.tsx
 import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
-import { login } from "../services/authService";
+import { login, LoginResult } from "../services/authService";
+import "./LoginPage.css";
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleLogin = async (username: string, password: string) => {
-    const success = await login(username, password);
-    if (success) {
+    try {
+      const { token }: LoginResult = await login(username, password);
+      localStorage.setItem("accessToken", token);
       alert("로그인 성공!");
-      // 페이지 이동 등 추가 처리
-    } else {
-      alert("로그인 실패!");
+      navigate("/dashboard");
+    } catch (err) {
+      alert((err as Error).message);
     }
   };
 
   return (
-    <div>
-      <h2>로그인</h2>
-      <LoginForm onLogin={handleLogin} />
+    <div className="login-page">
+      <div className="login-card">
+        <h2>로그인</h2>
+        <LoginForm onLogin={handleLogin} />
+        <div className="login-footer">
+          <span>계정이 없으신가요? </span>
+          <Link to="/register">회원가입</Link>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* filepath: c:\Private\git\haksik\frontend\src\pages\LoginPage.css */
 .login-page {
   display: flex;
   flex-direction: column; /* 컨텐츠가 세로로 쌓이도록 */
@@ -51,16 +52,17 @@
   margin-top: 1.5rem; /* 여백 조정 */
   text-align: center;
   font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  color: var(--color-text-secondary); /* "계정이 없으신가요?" 텍스트 색상 */
 }
 
 .login-footer a {
+  display: inline; /* 인라인 요소로 표시되는지 확인 */
   font-weight: 500;
   margin-left: 0.25rem;
-  color: var(--color-primary); /* 링크 색상을 교색으로 설정 */
+  color: var(--color-primary);     /* 기본 색상을 교색(파란색 계열)으로 변경 */
   text-decoration: none; /* 기본 밑줄 제거 */
 }
 .login-footer a:hover {
-  color: var(--color-secondary); /* 호버 시 보조색으로 변경 */
+  color: var(--color-secondary);   /* 호버 시 보조색(녹색 계열)으로 변경 */
   text-decoration: underline; /* 호버 시 밑줄 표시 */
 }

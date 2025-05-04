@@ -4,6 +4,14 @@ import Header from "./components/Header";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 
+// 임시 대시보드 컴포넌트
+const DashboardPage: React.FC = () => (
+  <div style={{ padding: '2rem', textAlign: 'center' }}>
+    <h1>대시보드</h1>
+    <p>로그인되었습니다!</p>
+  </div>
+);
+
 const App: React.FC = () => (
   <>
     <Header />
@@ -12,6 +20,7 @@ const App: React.FC = () => (
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} /> {/* 대시보드 라우트 추가 */}
         {/* 다른 페이지 라우트 추가 */}
       </Routes>
     </BrowserRouter>
